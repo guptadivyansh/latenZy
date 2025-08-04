@@ -110,7 +110,7 @@ if ~exist('useDirectQuant','var') || isempty(useDirectQuant)
 end
 
 %allowNegative
-if ~exist('restrictNegative','var') || isempty(restrictNeg)
+if ~exist('restrictNeg','var') || isempty(restrictNeg)
     restrictNeg = false;
 end
 
@@ -148,7 +148,7 @@ sLatenzy = struct;
 %check if negative latencies are restricted
 minLatency = useDur(1);
 if restrictNeg
-    minLatency = 0;
+    minLatency = 0.2; %0
 end
 
 %run
