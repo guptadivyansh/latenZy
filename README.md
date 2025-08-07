@@ -27,7 +27,7 @@ fprintf('Estimated latency: %.2f ms\n', latz);
 use_dur/useDur is a window around the event times (e.g., [-0.1 1] or 1 when only including post-event time)
 
 ![Estimation example](python/latenzy_ex.png)
-*Fig. 1: Detecting neural spiking onset using `latenZy`. Red = estimate.*
+*Detecting neural spiking onset using `latenZy` (Python example). Red = estimate.*
 
 
 ## Estimating when spiking starts to diverge between conditions with `latenZy2`
@@ -50,10 +50,12 @@ fprintf('Estimated latency: %.2f ms\n', latz);
 use_dur/useDur is a window around the event times (e.g., [-0.1 1] or 1 when only including post-event time)
 
 ![Estimation example](python/latenzy2_ex.png)
-*Fig. 2: Detecting the onset of spiking divergence using `latenZy2`. Red = estimate.*
+*Detecting the onset of spiking divergence using `latenZy2` (Python example) Red = estimate.*
 
 ## Preparing your data
-*LatenZy* requires continuous spike times and event times — that is, spike timestamps and corresponding stimulus/event onsets expressed in absolute time (not pre-aligned or trial-relative data). If your data is already aligned to trial events (e.g., spike times are relative to stimulus onset, and you no longer store the original event times), you'll need to reconstruct continuous spike times and provide the corresponding event times explicitly. Here's a 
+*LatenZy* requires continuous spike times and event times — that is, spike timestamps and corresponding stimulus/event onsets expressed in absolute time (not pre-aligned or trial-relative data). If your data is already aligned to trial events (e.g., spike times are relative to stimulus onset, and you no longer store the original event times), you'll need to reconstruct continuous spike times and provide the corresponding event times explicitly. Here's how to do this.
+
+
 
 
 
