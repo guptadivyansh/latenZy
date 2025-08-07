@@ -1,4 +1,8 @@
 # *latenZy* — Preprocessing Guidlines 
+**Contents:** 
+- Preparing trial-aligned data for ***latenZy***
+- Using ***latenZy2*** with trial-aligned spike data
+- Excluding a fixed window across event repetitions
 
 ## Preparing trial-aligned data for ***`latenZy`***
 ***`latenZy`*** requires spike and event times as continuous, absolute timestamps. If your data is trial-aligned (e.g., spikes relative to stimulus onset) and you don't have the original event times, you can simulate them by assigning large, fixed offsets between repetitions (e.g., 100s apart):
@@ -74,4 +78,4 @@ latency, s_latenzy2 = latenzy2(spike_times1, [], spiketimes2, [], use_dur=[0, 1]
 [latency, sLatenzy2] = latenzy2(spikeTimes1, [], spikeTimes2, [], [0 1]);
 ```
 
-## Excluding 
+## Excluding a fixed window across event repetitions
