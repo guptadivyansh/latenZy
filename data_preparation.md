@@ -1,4 +1,4 @@
-# *latenZy* — Preprocessing Guidlines 
+# *latenZy* — Preprocessing guidelines 
 **Contents:** 
 - Preparing trial-aligned data for ***latenZy***
 - Using ***latenZy2*** with trial-aligned spike data
