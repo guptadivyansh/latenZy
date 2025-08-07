@@ -52,6 +52,15 @@ use_dur/useDur is a window around the event times (e.g., [-0.1 1] or 1 when only
 ![Estimation example](python/latenzy2_ex.png)
 *Fig. 2: Detecting the onset of spiking divergence using `latenZy2`. Red = estimate.*
 
+## Preparing your data
+*LatenZy* requires continuous spike times and event times — that is, spike timestamps and corresponding stimulus/event onsets expressed in absolute time (not pre-aligned or trial-relative data). If your data is already aligned to trial events (e.g., spike times are relative to stimulus onset, and you no longer store the original event times), you'll need to reconstruct continuous spike times and provide the corresponding event times explicitly. Here's a 
+
+
+
+
+
+
+
 Please send any questions or comments to r.haak at nin.knaw.nl
 
 ## Dependencies
