@@ -65,7 +65,7 @@ In the first step of the algorithm, data is stitched across repetitions by remov
 ***`latenZy2`*** can directly analyze trial-aligned spike data without needing event times (because the statistics don't require jittering event times).
 To do this:
 - Pass spike times for each trial in lists (Python) or cell arrays (MATLAB).
-- Set event time inputs to empty lists/arrays ([]).
+- Set event time inputs to empty lists/arrays ([ ]).
 - Define the event window relative to stimulus (e.g., [0, 1] seconds).
 
 **Python example:**
