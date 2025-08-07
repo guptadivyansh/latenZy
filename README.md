@@ -7,9 +7,8 @@ These methods leverage the cumulative distribution of spike times to detect time
 You can read our preprint describing these methods here: https://www.biorxiv.org/content/10.1101/2025.06.30.662308v1
 
 
-
 ## Estimating response latencies with `latenZy`
-**`latenZy`** is designed to estimate **when neural responses begin following discrete events** by detecting event-locked changes in spiking rates. 
+**`latenZy`** is designed to estimate **when neural responses begin following discrete events** (e.g., stimulus onset) by detecting event-locked changes in spiking rates. 
 
 
 **Python example:**
@@ -33,7 +32,7 @@ use_dur/useDur is a window around the event times (e.g., [-0.1 1] or 1 when only
 
 
 ## Estimating when spiking starts to diverge between conditions with `latenZy2`
-**`latenZy2`** identifies the time point at which neural spiking **begins to diverge between experimental conditions**.
+**`latenZy2`** identifies the time point at which neural spiking **begins to diverge between experimental conditions** (e.g., hit vs miss or attended vs unattended).
   
 **Python example:**
 ```python
@@ -55,17 +54,10 @@ use_dur/useDur is a window around the event times (e.g., [-0.1 1] or 1 when only
 *Detecting the onset of spiking divergence using `latenZy2` (Python example) Red = estimate.*
 
 ## Preparing your data
-*LatenZy* requires continuous spike times and event times — that is, spike timestamps and corresponding stimulus/event onsets expressed in absolute time (not pre-aligned or trial-relative data). If your data is already aligned to trial events (e.g., spike times are relative to stimulus onset, and you no longer store the original event times), you'll need to reconstruct continuous spike times and provide the corresponding event times explicitly. Here's how to do this.
+*LatenZy* requires continuous spike and event times in absolute (global) timestamps. If your data is trial-aligned (spikes relative to stimulus onset) and lacks original event times, you must reconstruct absolute spike times and provide the corresponding event timestamps. See the [Data Preparation Guide](./data_preparation.md) for detailed instructions.
 
-
-
-
-
-
-
-
-
-Please send any questions or comments to r.haak at nin.knaw.nl
+> ⚠️ **Important:** If you've preprocessed your data by trimming, artifact removal, or cutting out sections, this may interfere with *latenZy*'s assumptions.  
+> Please review our recommendations in the [Preprocessing Guidelines](./preprocessing_guidelines.md).
 
 ## Dependencies
 The Python implementation requires the following packages to work:
