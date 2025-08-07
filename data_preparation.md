@@ -81,7 +81,21 @@ latency, s_latenzy2 = latenzy2(spike_times1, [], spiketimes2, [], use_dur=[0, 1]
 ## Excluding a fixed window across event repetitions
 In certain situations, it is necessary to exclude a fixed time window relative to the event times, such as when stimulation artifacts are present. Simply removing all spikes within this window is insufficient, because  *`latenZy`* detects any deviations in spiking activity. Removing spikes in this way can create a time-locked decrease that may become significant under specific conditions. A better approach is to **remove the artifact period and stitch the remaining segments together**.
 
-**Example:**
+**Example:**<br>
+![Artifact example](example_figs/latenzy_artifact.png)<br>
+*^The spikes between ~0-50ms are artifactual and interfere with latency estimation.*
+
+![Artifact example](example_figs/latenzy_artifact_cut.png)<br>
+*^Removing all spikes within this window creates another artifactual, time-locked deviation (peak in light blue curve).*
+
+![Artifact example](example_figs/latenzy_artifact_cut.png)<br>
+*^Removing all spikes and stitching the valid periods (by shifting spikes to the right<sup>#</sup>) overcomes this.*
+
+
+
+
+
+
 
 
 
