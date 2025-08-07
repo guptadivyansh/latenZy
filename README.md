@@ -56,7 +56,7 @@ use_dur/useDur is a window around the event times (e.g., [-0.1 1] or 1 when only
 ## Preparing your data
 *LatenZy* requires continuous spike and event times in absolute (global) timestamps. If your data is trial-aligned (spikes relative to stimulus onset) and lacks original event times, you must reconstruct absolute spike times and provide the corresponding event timestamps. See the [Data Preparation Guide](./data_preparation.md) for detailed instructions.
 
-> ⚠️ **Important:** If you've preprocessed your data by trimming, artifact removal, or cutting out sections, this may interfere with *latenZy*'s assumptions.  
+> ⚠️ **Important:** If you've preprocessed your data by cutting out sections/artifact removal, this may interfere with *latenZy*'s assumptions.  
 > Please review our recommendations in the [Preprocessing Guidelines](./preprocessing_guidelines.md).
 
 ## Dependencies
