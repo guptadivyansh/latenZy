@@ -3,7 +3,7 @@
 ## Preparing trial-aligned data for ***`latenZy`***
 ***`latenZy`*** requires spike and event times as continuous, absolute (global) timestamps. If your data is trial-aligned (e.g., spikes relative to stimulus onset) and you don't have the original event times, you can simulate them by assigning large, fixed offsets between repetitions (e.g., 100s apart):
 
-**Python example:**
+### Python example:
 ```python
 import numpy as np
 
@@ -28,7 +28,7 @@ for i, t_event in enumerate(event_times):
 spike_times = np.concatenate(new_spikes)
 ```
 
-**MATLAB example:**
+### MATLAB example:
 ```matlab
 alignedSpikes = {
     [-0.3, 0.2, 0.3, 0.7];
@@ -51,8 +51,26 @@ end
 spikeTimes = [newSpikes{:}];
 ```
 
-This produces pseudo-global spike and event times compatible with *`latenZy`*. In the first step of the algorithm, data is stitched across repetitions by removing spikes outside the event window `use_dur`/`useDur`. The excluded intervals between event repetiations are substracted from all subsequent times, creating a continuous timeline of only event-related activity for statistics.
+This produces pseudo-global spike and event times compatible with *`latenZy`*. 
+
+### Data-stitching ###
+In the first step of the algorithm, data is stitched across repetitions by removing spikes outside the event window `use_dur`/`useDur`. The excluded intervals between event repetiations are substracted from all subsequent times, creating a continuous timeline of only event-related activity for statistics. Make sure that `do_stitch`/`doStitch` is set to **True** (it is by default).
 > ⚠️ **Important:** Make sure `use_dur`/`useDur` does **not** include periods without spikes, as silent intervals distort the stitched data and bias latency estimates.
 
+## Using ***`latenzy2`*** with trial-aligned spike data
+***`latenzy2`*** can directly analyze trial-aligned spike data without needing event times (because the statistics don't require jittering event times).
+To do this:
+- Pass spike times for each trial in lists (Python) or cell arrays (MATLAB).
+- Set event time inputs to empty lists/arrays ([]).
+- Define the event window relative to stimulus (e.g., [0, 0.5] seconds).
 
+### Python
+```python
+latency, s_latenzy2 = latenzy2(spike_times1, [], spiketimes2, [], use_dur=[0, 0.5])
+```
+
+### MATLAB:
+```matlab
+[latency, sLatenzy2] = latenzy2(spikeTimes1, [], spikeTimes2, [], [0 0.5]);
+```
 
