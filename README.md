@@ -15,14 +15,14 @@ You can read our preprint describing these methods here: https://www.biorxiv.org
 ```python
 from latenzy import latenzy
 
-latz, s_latenzy = latenzy(spike_times, event_times, use_dur)
-print(f"Estimated latency: {latz:.2f} ms")
+latency, s_latenzy = latenzy(spike_times, event_times, use_dur)
+print(f"Estimated latency: {latency:.2f} ms")
 ```
 
 **MATLAB example:**
 ```matlab
-[latz, sLatenzy] = latenzy(spikeTimes, eventTimes, useDur);
-fprintf('Estimated latency: %.2f ms\n', latz);
+[latency, sLatenzy] = latenzy(spikeTimes, eventTimes, useDur);
+fprintf('Estimated latency: %.2f ms\n', latency);
 ```
 
 `use_dur`/`useDur` is a window around the event times (e.g., [-0.1 1] or 1 when only including post-event time)
@@ -38,14 +38,14 @@ fprintf('Estimated latency: %.2f ms\n', latz);
 ```python
 from latenzy import latenzy2
 
-latz, s_latenzy2 = latenzy2(spike_times1, event_times1, spike_times2, event_times2, use_dur)
-print(f"Estimated latency: {latz:.2f} ms")
+latency, s_latenzy2 = latenzy2(spike_times1, event_times1, spike_times2, event_times2, use_dur)
+print(f"Estimated latency: {latency:.2f} ms")
 ```
 
 **MATLAB example:**
 ```matlab
-[latz, sLatenzy2] = latenzy2(spikeTimes1, eventTimes1, spikeTimes2, eventTimes2, useDur);
-fprintf('Estimated latency: %.2f ms\n', latz);
+[latency, sLatenzy2] = latenzy2(spikeTimes1, eventTimes1, spikeTimes2, eventTimes2, useDur);
+fprintf('Estimated latency: %.2f ms\n', latency);
 ```
 
 `use_dur`/`useDur` is a window around the event times (e.g., [-0.1 1] or 1 when only including post-event time)
