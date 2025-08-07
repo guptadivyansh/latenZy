@@ -62,16 +62,16 @@ In the first step of the algorithm, data is stitched across repetitions by remov
 To do this:
 - Pass spike times for each trial in lists (Python) or cell arrays (MATLAB).
 - Set event time inputs to empty lists/arrays ([]).
-- Define the event window relative to stimulus (e.g., [0, 0.5] seconds).
+- Define the event window relative to stimulus (e.g., [0, 1] seconds).
 
 **Python example:**
 ```python
-latency, s_latenzy2 = latenzy2(spike_times1, [], spiketimes2, [], use_dur=[0, 0.5])
+latency, s_latenzy2 = latenzy2(spike_times1, [], spiketimes2, [], use_dur=[0, 1])
 ```
 
 **MATLAB example:**
 ```matlab
-[latency, sLatenzy2] = latenzy2(spikeTimes1, [], spikeTimes2, [], [0 0.5]);
+[latency, sLatenzy2] = latenzy2(spikeTimes1, [], spikeTimes2, [], [0 1]);
 ```
 
 ## Excluding 
