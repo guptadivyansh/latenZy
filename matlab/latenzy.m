@@ -148,7 +148,7 @@ sLatenzy = struct;
 %check if negative latencies are restricted
 minLatency = useDur(1);
 if restrictNeg
-    minLatency = 0.2; %0
+    minLatency = 0;
 end
 
 %run

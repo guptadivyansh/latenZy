@@ -1,6 +1,6 @@
 function [latency,sLatenzy2] = latenzy2(spikeTimes1,eventTimes1,spikeTimes2,eventTimes2,useDur,resampNum,peakAlpha,useParPool,useDirectQuant,restrictNeg,makePlots)
 % get latency of spiking difference between two conditions, syntax:
-% [respLatency,sLatenzy2] = latenzy2(spikeTimes1,eventTimes1,spikeTimes2,eventTimes2,useDur,resampNum,minPeakZ,useParPool,useDirectQuant,restrictNeg,makePlots)  
+% [latency,sLatenzy2] = latenzy2(spikeTimes1,eventTimes1,spikeTimes2,eventTimes2,useDur,resampNum,minPeakZ,useParPool,useDirectQuant,restrictNeg,makePlots)  
 %   inputs:
 %   - spikeTimes1: [S x 1]: spike times condition 1 (s)
 %   - eventTimes1: [T x 1]: event times condition 1 (s)
